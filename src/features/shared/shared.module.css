@@ -1,0 +1,109 @@
+.hist {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+.histRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+}
+@media (max-width: 860px) {
+  .histRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+}
+.rangeNeutral {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--acc) 35%, transparent), var(--acc));
+}
+.histTriplet {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid var(--hair);
+  border-radius: var(--r-md);
+  background: color-mix(in srgb, var(--panel-2) 70%, transparent);
+  overflow: hidden;
+}
+.cell {
+  padding: 13px 14px;
+  min-width: 0;
+}
+.cell + .cell {
+  border-left: 1px solid var(--hair);
+}
+.cellLabel {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.cellValue {
+  margin-top: 6px;
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+.cellHint {
+  margin-top: 5px;
+  font-size: 11px;
+  color: var(--ink-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ranges {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.range {
+  display: grid;
+  grid-template-columns: 96px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+}
+.rangeLabel {
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.rangeTrack {
+  position: relative;
+  height: 6px;
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--hair-2) 50%, transparent);
+}
+.rangeFill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--pos), var(--warn), var(--neg));
+  background-size: 100% 100%;
+  opacity: 0.78;
+}
+.rangeVal {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 74px;
+  text-align: right;
+}
+.rangeSep {
+  color: var(--ink-3);
+  margin: 0 4px;
+}
+@media (max-width: 520px) {
+  .cellValue {
+    font-size: 20px;
+  }
+  .range {
+    grid-template-columns: 84px 1fr auto;
+  }
+}

@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Rdr design tokens. Every colour in the app resolves through these, so the
+   light / dark themes and charts stay in sync.
+   ========================================================================== */
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* surfaces */
+  --canvas: #05060b;
+  --canvas-2: #080a12;
+  --panel: #0b0e18;
+  --panel-2: #10141f;
+  --elev: #151a28;
+  --hair: rgba(148, 163, 214, 0.09);
+  --hair-2: rgba(148, 163, 214, 0.16);
+  --hair-hi: rgba(255, 255, 255, 0.05);
+
+  /* ink */
+  --ink: #eef1f9;
+  --ink-2: #a0a8c0;
+  --ink-3: #636c88;
+  --ink-inv: #ffffff;
+
+  /* brand */
+  --acc: #ec4579;
+  --acc-2: #ff6a4d;
+  --acc-dim: rgba(244, 60, 123, 0.14);
+  --acc-glow: rgba(236, 69, 121, 0.26);
+  --brand-grad: linear-gradient(135deg, #ff6a4d 0%, #f43c7b 48%, #c2268f 100%);
+
+  /* semantic */
+  --pos: #3fc489;
+  --neg: #f2605a;
+  --neu: #8891a8;
+  --warn: #e5b04a;
+  --high: #ee8d52;
+  --fire: #f04a3c;
+  --mag: #cf74c4;
+  --amber: #d3a540;
+  --sky: #62aef0;
+  --violet: #998ef0;
+
+  /* platforms */
+  --youtube: #ee5d5d;
+  --instagram: #b77ff0;
+  --x: #5eaeea;
+  --news: #3cc3b0;
+
+  /* effects */
+  --shadow-1: 0 1px 0 var(--hair-hi) inset, 0 12px 32px -18px rgba(0, 0, 0, 0.8);
+  --shadow-2: 0 1px 0 var(--hair-hi) inset, 0 30px 80px -30px rgba(0, 0, 0, 0.9);
+  --veil: rgba(3, 4, 8, 0.72);
+  --bar-bg: rgba(5, 6, 11, 0.72);
+  --grid-line: rgba(148, 163, 214, 0.035);
+  --ambient: rgba(236, 69, 121, 0.045);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --canvas: #f3f4f9;
+  --canvas-2: #eceef6;
+  --panel: #ffffff;
+  --panel-2: #f6f7fb;
+  --elev: #ffffff;
+  --hair: rgba(20, 26, 50, 0.08);
+  --hair-2: rgba(20, 26, 50, 0.14);
+  --hair-hi: rgba(255, 255, 255, 0.9);
+
+  --ink: #10142a;
+  --ink-2: #4f5772;
+  --ink-3: #8a91a8;
+  --ink-inv: #ffffff;
+
+  --acc: #dc1e63;
+  --acc-2: #f0532f;
+  --acc-dim: rgba(220, 30, 99, 0.09);
+  --acc-glow: rgba(220, 30, 99, 0.25);
+
+  --pos: #0f8a58;
+  --neg: #dc3a32;
+  --neu: #7e86a0;
+  --warn: #b7820c;
+  --high: #d96d12;
+  --fire: #d92411;
+  --mag: #b84fad;
+  --amber: #b5810f;
+  --sky: #2e8fd6;
+  --violet: #6e5be0;
+
+  --youtube: #e3302f;
+  --instagram: #9d3fe0;
+  --x: #1f86d1;
+  --news: #0f9e8c;
+
+  --shadow-1: 0 1px 2px rgba(16, 20, 42, 0.04), 0 8px 24px -16px rgba(16, 20, 42, 0.18);
+  --shadow-2: 0 2px 6px rgba(16, 20, 42, 0.06), 0 32px 80px -32px rgba(16, 20, 42, 0.35);
+  --veil: rgba(236, 238, 246, 0.72);
+  --bar-bg: rgba(243, 244, 249, 0.8);
+  --grid-line: rgba(20, 26, 50, 0.035);
+  --ambient: rgba(220, 30, 99, 0.05);
+}
+
+:root {
+  --f-sans: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-mono: 'Geist Mono Variable', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --r-xs: 6px;
+  --r-sm: 9px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-fast: 140ms;
+  --t-med: 260ms;
+
+  --page-max: 1320px;
+  --gutter: clamp(16px, 3vw, 32px);
+}

@@ -1,0 +1,188 @@
+.wrap {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.svg {
+  display: block;
+  overflow: visible;
+  touch-action: pan-y;
+}
+.svg:focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+.axis {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  fill: var(--ink-3);
+}
+.grid {
+  stroke: var(--hair);
+  stroke-width: 1;
+}
+
+/* tooltip */
+.tip {
+  position: absolute;
+  z-index: 15;
+  pointer-events: none;
+  transform: translate(-50%, calc(-100% - 14px));
+  min-width: 150px;
+  max-width: 280px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--elev) 94%, transparent);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--hair-2);
+  box-shadow: var(--shadow-2);
+  font-size: 12px;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+.tipBelow {
+  transform: translate(-50%, 16px);
+}
+.tipTitle {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 4px;
+}
+.tipValue {
+  font-size: 13px;
+  color: var(--ink);
+}
+.tipValue b {
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  margin-right: 4px;
+}
+.tipNote {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--hair);
+  color: var(--ink-2);
+}
+.tipRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  font-size: 12px;
+}
+.tipRow + .tipRow {
+  margin-top: 3px;
+}
+.tipSwatch {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 7px;
+}
+
+/* legend toggles */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.legendBtn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 28px;
+  padding: 0 11px;
+  border-radius: 999px;
+  border: 1px solid var(--hair-2);
+  background: var(--panel-2);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 550;
+  transition: all var(--t-fast) var(--ease);
+}
+.legendBtn[aria-pressed='false'] {
+  opacity: 0.42;
+  background: transparent;
+}
+.legendBtn:hover {
+  border-color: var(--c);
+}
+.legendSwatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--c);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--c) 40%, transparent);
+}
+
+/* bar list */
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.barRow {
+  display: grid;
+  grid-template-columns: minmax(96px, 150px) 1fr auto;
+  align-items: center;
+  gap: 12px;
+  font-size: 12.5px;
+}
+.barLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.barSub {
+  color: var(--ink-3);
+  font-size: 11px;
+  margin-left: 2px;
+}
+.barTrack {
+  position: relative;
+  height: 8px;
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--hair-2) 55%, transparent);
+  overflow: hidden;
+}
+.barFill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 99px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--c) 45%, transparent), color-mix(in srgb, var(--c) 88%, transparent));
+  box-shadow: 0 0 12px -2px var(--c);
+}
+.barValue {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  color: var(--ink-2);
+  min-width: 52px;
+  text-align: right;
+}
+
+/* sentiment bar */
+.sent {
+  display: flex;
+  height: 6px;
+  border-radius: 99px;
+  overflow: hidden;
+  gap: 2px;
+}
+.sent > i {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+}
